@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "watch-tailwind": "NODE_ENV=development postcss tailwind/theme.css -o assets/css/build.css --watch",
+    "build-tailwind": "NODE_ENV=production postcss tailwind/theme.css -o assets/css/build.css"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.3.1",
+    "autoprefixer": "^10.2.1",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
+  }
+}

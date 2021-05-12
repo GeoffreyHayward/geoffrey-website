@@ -1,0 +1,2 @@
+User-Agent: *
+Sitemap: https://geoffrey.dev/sitemap.xml

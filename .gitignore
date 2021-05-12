@@ -1,0 +1,23 @@
+# IDEs
+.idea/
+
+# Hugo
+public/
+resources/
+**/build.css
+
+# Node
+node_modules/
+
+# Terraform
+**/.terraform/*
+**/*.tfstate
+**/*.tfstate.*
+**/crash.log
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
+
+# Envirionment Veribles
+**/environment.sh

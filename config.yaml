@@ -1,0 +1,11 @@
+baseURL: "https://geoffrey.dev/"
+languageCode: "en-gb"
+title: "Geoffrey Hayward"
+pygmentsUseClasses: true
+
+outputs:
+  home:
+    - HTML
+  post:
+    - HTML
+    - RSS

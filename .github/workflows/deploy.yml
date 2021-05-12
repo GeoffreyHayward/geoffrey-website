@@ -1,0 +1,107 @@
+name: Production Orchestrate, Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  infrastructure:
+    name: 'Orchestrate Infrastructure'
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+      UPTIMEROBOT_API_KEY: ${{ secrets.UPTIMEROBOT_API_KEY }}
+      TF_VAR_cloudflare_zone_id: ${{ secrets.TF_VAR_CLOUDFLARE_ZONE_ID }}
+      TF_VAR_google_site_verification_code: ${{ secrets.TF_VAR_GOOGLE_SITE_VERIFICATION_CODE }}
+
+    steps:
+
+      # Step 1 - Checks-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout
+        uses: actions/checkout@v2
+
+
+      # Step 2 - Sets up the latest version of Terraform
+      - name: Terraform setup
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: '0.14.x'
+          terraform_wrapper: false
+
+      # Step 3 - Check the formatting
+      - name: Terraform version
+        run: terraform version -no-color
+        working-directory: infrastructure/
+
+      # Step 4 - Check the formatting
+      - name: Terraform fmt
+        run: terraform fmt -check -no-color
+        working-directory: infrastructure/
+        continue-on-error: true
+
+      # Step 5 - Initialise Terraform
+      - name: Terraform init
+        run: terraform init -no-color
+        working-directory: infrastructure/
+
+      # Step 6 - Check the project's Terraform is valid
+      - name: Terraform validate
+        run: terraform validate -no-color
+        working-directory: infrastructure/
+
+      # Step 7 - Check the change is likely to work
+      - name: Terraform plan
+        run: terraform plan -out=tfplan -no-color
+        working-directory: infrastructure/
+
+      # Step 8 - Update Infrastructure
+      - name: Terraform apply
+        run: terraform apply tfplan -no-color
+        working-directory: infrastructure/
+
+  deploy:
+    name: 'Build and Deploy Website'
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Step 1 - Checks-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Step 2 - Setup Caching
+      - name: Caching
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Step 3 - Setup node.js for Tailwind CSS
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+
+      # Step 4 - Setup node.js for Tailwind CSS
+      - name: Install Tailwind and it's dependencies
+        run: npm install
+
+      # Step 5 - Sets up the latest version of Hugo
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      # Step 6 - Builds the site using the latest version of Hugo
+      - name: Build
+        run: NODE_ENV=production hugo --minify
