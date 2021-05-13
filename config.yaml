@@ -3,6 +3,9 @@ languageCode: "en-gb"
 title: "Geoffrey Hayward"
 pygmentsUseClasses: true
 
+minify:
+  disableSVG: true
+
 outputs:
   home:
     - HTML
