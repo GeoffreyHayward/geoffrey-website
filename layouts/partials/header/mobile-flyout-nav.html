@@ -1,0 +1,54 @@
+<!-- Mobile menu, show/hide based on mobile menu state. -->
+<div class="lg:hidden" :class="{ 'block' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}" >
+    <!--
+      Mobile menu overlay, show/hide based on mobile menu state.
+
+      Entering: "duration-150 ease-out"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "duration-150 ease-in"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div  :class="{ 'duration-150 ease-out' : mobileMenuOpen , 'duration-150 ease-in' : !mobileMenuOpen}"
+          class="z-20 fixed inset-0 bg-black bg-opacity-25"
+          aria-hidden="true"></div>
+
+    <!--
+      Mobile menu, show/hide based on mobile menu state.
+
+      Entering: "duration-150 ease-out"
+        From: "opacity-0 scale-95"
+        To: "opacity-100 scale-100"
+      Leaving: "duration-150 ease-in"
+        From: "opacity-100 scale-100"
+        To: "opacity-0 scale-95"
+    -->
+    <div class="z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full p-2 transition transform origin-top">
+        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y divide-gray-200">
+            <div class="pt-3 pb-2">
+                <div class="flex items-center justify-between px-4">
+                    <div>
+                        <img class="h-8 w-auto" src="/geoffrey-hayward-300x300.jpg" alt="Geoffrey">
+                    </div>
+                    <div class="-mr-2">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                            <span class="sr-only">Close menu</span>
+                            <!-- Heroicon name: outline/x -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-3 px-2 space-y-1">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                        {{ $active := ( $currentPage.IsMenuCurrent "main" . ) }}
+                        <a href="{{ .URL }}" class="block rounded-md px-3 py-2 text-base text-gray-900 font-medium hover:bg-gray-100 hover:text-gray-800">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
