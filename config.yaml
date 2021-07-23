@@ -1,6 +1,6 @@
-baseURL: "https://geoffrey.dev/"
 languageCode: "en-gb"
-title: "Geoffrey Hayward"
+title: "Geoffrey's Blog"
+
 pygmentsUseClasses: true
 
 minify:
@@ -12,3 +12,14 @@ outputs:
   post:
     - HTML
     - RSS
+    -
+
+menu:
+  main:
+    - identifier: homepage
+      name: Home
+      url: /
+      weight: -110
+    - name: Blog
+      url: /blog/
+      weight: -100

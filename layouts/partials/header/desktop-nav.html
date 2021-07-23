@@ -1,0 +1,9 @@
+<nav class="flex space-x-4">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+        {{ $active := ( $currentPage.IsMenuCurrent "main" . ) }}
+        <a href="{{ .URL }}" class="{{ if not $active  }} text-white {{end }} text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-30 hover:text-white {{ if $active  }} bg-opacity-90 {{ end }}" aria-current="page">
+            {{ .Name }}
+        </a>
+    {{ end }}
+</nav>

@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{{ .Title }}</title>
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-        {{ $syntax := resources.Get "css/syntax.css" | resources.ExecuteAsTemplate "syntax.css" . }}
-        {{ $build := resources.Get "css/build.css" | resources.ExecuteAsTemplate "build.css" . }}
-        {{ $styles := slice $syntax $build | resources.Concat "styles.css" | minify | fingerprint }}
-        <link rel="preload" href="{{ $styles.RelPermalink }}" as="style">
-        <link media="screen" rel="stylesheet" href="{{ $styles.RelPermalink }}">
-
+        {{- partial "head/common-css.html" . -}}
+        {{- partial "head/common-js.html" . -}}
     </head>
-
-    <body class="bg-blue-50">
-
-        {{- partial "header.html" . -}}
-
-        <div class="main-container pt-16">
-            {{- block "main" . }}{{- end }}
+    <body>
+        <div class="min-h-screen bg-gray-100">
+            {{- partial "header.html" . -}}
+            <main class="-mt-24 pb-8">
+                <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+                    <div class="bg-white rounded-lg shadow px-5 py-6 sm:px-6">
+                        {{- block "main" . }}{{- end }}
+                    </div>
+                </div>
+            </main>
+            {{- partial "footer.html" . -}}
         </div>
-
-        {{- partial "footer.html" . -}}
-
     </body>
-
 </html>
