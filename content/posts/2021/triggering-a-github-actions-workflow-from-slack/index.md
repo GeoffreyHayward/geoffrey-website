@@ -2,20 +2,20 @@
 title: "Triggering a GitHub Actions Workflow with a Slack Slash Command"
 author: "Geoffrey Hayward"
 date: 2021-05-12T11:00:00Z
-year: 2021
-month: 2021/02
 categories:
-- Software Development Productivity
+- computing
 tags:
 - Slack
 - GitHub Actions
 - AWS API Gateway
 - DevOps
+aliases:
+- blog/triggering-a-github-actions-workflow-from-slack/
 ---
 In this post I am going to show how you can trigger a [GitHub Actions](https://github.com/features/actions) workflow
 with a Slack Slash command.
 
-<!-- more -->
+<!--more-->
 
 The popular team communication platform 'Slack' provides several means to extend their platform. One means of extension
 is the so-called [Slash Command](https://api.slack.com/interactivity/slash-commands#what_are_commands), which as the

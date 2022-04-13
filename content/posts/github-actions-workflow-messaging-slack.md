@@ -2,10 +2,8 @@
 title: "GitHub Actions Workflow Communicating Feedback to Slack"
 author: "Geoffrey Hayward"
 date: 2021-02-09T20:15:37Z
-year: 2021
-month: 2021/02
 categories:
-- Software and Web Development
+- computing
 tags:
 - Stack
 - DevOps

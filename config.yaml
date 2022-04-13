@@ -1,5 +1,5 @@
 languageCode: "en-gb"
-title: "Geoffrey's Blog"
+title: "Geoffrey's Website"
 
 pygmentsUseClasses: true
 
@@ -9,10 +9,9 @@ minify:
 outputs:
   home:
     - HTML
-  post:
+  posts:
     - HTML
     - RSS
-    -
 
 menu:
   main:
@@ -20,6 +19,6 @@ menu:
       name: Home
       url: /
       weight: -110
-    - name: Blog
-      url: /blog/
+    - name: Posts
+      url: /posts/
       weight: -100

@@ -5,7 +5,7 @@ date: {{ .Date }}
 year: {{ dateFormat "2006" .Date }}
 month: {{ dateFormat "2006/01" .Date }}
 categories:
-- Software and Web Development
+- computing
 tags:
 - example tag
 ---
