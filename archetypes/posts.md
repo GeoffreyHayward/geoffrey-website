@@ -7,8 +7,11 @@ month: {{ dateFormat "2006/01" .Date }}
 categories:
 - computing
 tags:
-- example tag
+- Example 1
+- Example 2
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mollis augue. Aliquam ipsum arcu, laoreet ut aliquet vitae, commodo vel enim.
-<!-- more -->
+
+<!--more-->
+
 More...

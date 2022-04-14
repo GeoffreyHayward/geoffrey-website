@@ -11,7 +11,8 @@ tags:
 draft: true
 ---
 Finally, I got round to updating my website's platform and I feel like I moving into a new age. 
-<!-- more -->
+
+<!--more-->
 
 # Porting the content
 Good old  HTTrack

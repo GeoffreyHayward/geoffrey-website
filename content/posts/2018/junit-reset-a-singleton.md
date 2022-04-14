@@ -1,5 +1,5 @@
 ---
-title: "Java JUnit: Reset a singleton"
+title: "Java JUnit: Reset a Singleton"
 author: "Geoffrey Hayward"
 date: 2018-02-28T11:00:00Z
 categories:
@@ -22,4 +22,4 @@ public void setup() throws NoSuchFieldException, IllegalAccessException {
 }
 ```
 
-I hope this helps
+I hope this helps.

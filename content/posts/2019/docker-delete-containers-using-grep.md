@@ -14,12 +14,12 @@ Here is a handy way of deleting Docker containers using GREP.
 <!--more-->
 
 ```text
-docker rm -f $(docker ps | grep &lt;grep term&gt; | awk ‘{print $1}’)
+docker rm -f $(docker ps | grep <grep term> | awk ‘{print $1}’)
 ```
 
 And here is a handy way of deleting Docker images using GREP.
 
 ```text
-docker rmi -f $(docker images | grep &lt;grep term&gt; | awk ‘{print $3}’)
+docker rmi -f $(docker images | grep <grep term> | awk ‘{print $3}’)
 ```
 

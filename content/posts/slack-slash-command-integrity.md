@@ -5,11 +5,13 @@ date: 2021-02-09T20:15:37Z
 categories:
 - computing
 tags:
-- example tag
+- Slack
 draft: true
 ---
 Following on from ... where we triggered a GitHub Actions workflow from a Slack Slash Command via AWS' API Gateway. In 
 this post we will check the integrity of the call to verify it was sent from slack.
+
+<!--more-->
 
 As we used the AWS API Gateway the most obvious place to put the check is an AWS API Gateway Authroior. However, this 
 does not work. Consider the bellow as phodo code.

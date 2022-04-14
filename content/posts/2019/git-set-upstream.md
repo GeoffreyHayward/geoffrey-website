@@ -15,5 +15,5 @@ The first push of a new Git branch, when given as `git push` will remind you to 
 The following command will capture that reminder and then run it.
 
 ```text
-$(git push 2&gt;&amp;1 | grep &quot;git push&quot;)
+$(git push 2>&1 | grep "git push")
 ```
