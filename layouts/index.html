@@ -43,7 +43,7 @@
            Running
         </h2>
         <div class="mt-6 pt-0 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">  {{- block "right" . }}{{- end }}
-        {{ range first 4 (where .Site.RegularPages  "Section" "posts") }}
+            {{ range  first 8 (where .Site.RegularPages ".Params.categories" "intersect" (slice "running")) }}
         <article>
             <p class="text-sm text-gray-500">
                 <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02/01/2006"}}</time>

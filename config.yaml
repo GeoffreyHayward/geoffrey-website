@@ -15,10 +15,15 @@ outputs:
 
 menu:
   main:
-    - identifier: homepage
-      name: Home
+    - name: Home
       url: /
+      weight: -120
+    - name: About
+      url: /about/
       weight: -110
-    - name: Posts
-      url: /posts/
+    - name: Computing
+      url: /categories/computing/
       weight: -100
+    - name: Running
+      url: /categories/running/
+      weight: -90
