@@ -12,6 +12,6 @@ I'm excited to announce that I will be answering SEO (search engine optimisation
 
 <!--more-->
 
-<img src="../../../static.geoffhayward.eu/images/SEO-Geoffrey-Discount.html" alt="A banner that has a photo of Geoffrey Hayward next to details of The Search Conference in London on the 13th Febuary 2019" class="img-responsive" />
+![A banner that has a photo of Geoffrey Hayward (me) next to details of The Search Conference in London on the 13th February 2019. ](SEO-Geoffrey-Discount.jpg)
 
 If you are interested in SEO from a Software Developer's point of view, I hope to see you there.

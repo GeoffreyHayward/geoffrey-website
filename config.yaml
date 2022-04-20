@@ -13,6 +13,8 @@ outputs:
     - HTML
     - RSS
 
+pluralizeListTitles: false
+
 menu:
   main:
     - name: Home

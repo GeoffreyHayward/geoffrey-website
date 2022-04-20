@@ -1,9 +1,13 @@
 {{ define "main" }}
 <section class="prose sm:prose-sm max-w-none">
     <h1 id="title">{{ .Title }}</h1>
-    <p>{{ .Date.Format "January 2, 2006" }}</p>
+    <p>{{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} of {{ .Date.Format "January 2006" }}</p>
     <article>
         {{ .Content }}
     </article>
 </section>
+{{ end }}
+
+{{ define "right" }}
+    <!-- todo: put some stuff here -->
 {{ end }}

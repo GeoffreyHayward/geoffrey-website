@@ -21,4 +21,4 @@ results.toArray(new String[results.size()]);
 
 Hope it's helpful. If you know of anymore ways to convert an ArrayList to an Array in Java, leave a comment.
 
-**Update:** [The Java 8 Lambda way: ArrayList to an Array](/posts/2016/java-8-lambda-way-arraylist-to-an-array/)
+**Update:** [The Java 8 Lambda way: ArrayList to an Array](/posts/2016/07/java-8-lambda-way-arraylist-to-an-array/)

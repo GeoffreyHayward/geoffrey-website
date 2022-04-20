@@ -9,6 +9,8 @@ I just wanted to say, I finished my MSc dissertation in Computer Science and hav
 
 <!--more-->
 
-Image missing msc-project-photo.html
+![Geoffrey (me) holding a printout of my final project. ](msc-project-photo.jpg)
 
 I might get time to post to my blog now.
+
+**Update:** In reality, I mainly left my website untouched until April 2022.

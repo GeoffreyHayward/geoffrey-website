@@ -9,7 +9,7 @@ tags:
 - Lambda
 - Stream API
 ---
-In an earlier post this year, [Convert an ArrayList to an Array in Java](/posts/2016/from-arraylist-to-array-java/), I 
+In an earlier post this year, [Convert an ArrayList to an Array in Java](/posts/2016/02/from-arraylist-to-array-java/), I 
 wrote about a way to convert an ArrayList to an Array in Java. Here is the example code from the earlier post.
 
 <!--more-->
